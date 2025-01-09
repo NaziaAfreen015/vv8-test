@@ -8,11 +8,12 @@ async function collectAndDisplayFingerprintData() {
           .then(result => {
             // This is the visitor identifier:
             const visitorId = result.visitorId
-            console.log(visitorId)
+            // console.log(visitorId)
             document.getElementById("hashedData").textContent = visitorId;
           })
 
 }
+
 
 // Call the function to collect and display the data
 collectAndDisplayFingerprintData();
