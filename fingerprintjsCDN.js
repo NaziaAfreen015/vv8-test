@@ -1,5 +1,5 @@
 async function collectAndDisplayFingerprintData() {
-    const fpPromise = import('https://openfpcdn.io/fingerprintjs/v4')
+    const fpPromise = import('https://openfpcdn.io/fingerprintjs/v5')
           .then(FingerprintJS => FingerprintJS.load())
       
         // Get the visitor identifier when you need it.
