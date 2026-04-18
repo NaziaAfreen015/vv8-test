@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrustDevice-JS</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <h1>Fingerprint given by TrustDevice-JS</h1>
+  <div class="card">
+    <div class="result-box" id="result">Loading...</div>
+    <div class="status" id="status">Initializing...</div>
+  </div>
+
+  <script src="./common.js"></script>
+  <script>
+    async function run() {
+      try {
+        window._fmOpt = {
+          success: function (result) {
+            setResult(result.deviceId || safeStringify(result), "Done");
+          }
+        };
+
+        await loadScript(`./vendor/fm.js?t=${Math.floor(Date.now() / 3600000)}`);
+      } catch (err) {
+        setError(err);
+      }
+    }
+
+    run();
+  </script>
+</body>
+</html>
