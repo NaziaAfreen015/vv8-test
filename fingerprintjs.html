@@ -17,8 +17,9 @@
   <script type="module">
     async function run() {
       try {
-        const FingerprintJS = await import('https://openfpcdn.io/fingerprintjs/v5');
-        const fp = await FingerprintJS.load();
+        // const FingerprintJS = await import('https://openfpcdn.io/fingerprintjs/v5');
+        // const fp = await FingerprintJS.load();
+        const fp = await loadScript(`./vendor/fingerprintjs.js`);
         const result = await fp.get();
         setResult(result.visitorId, "Done");
       } catch (err) {
