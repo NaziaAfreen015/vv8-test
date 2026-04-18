@@ -18,12 +18,11 @@
   <script>
     async function run() {
       try {
-        if (!window.imprint) {
-          throw new Error("ImprintJs global not found");
+        if (typeof window.imprint === "undefined") {
+          throw new Error("imprint global not found");
         }
 
-        const imprint = new window.imprint();
-        const tests = [
+        const browserTests = [
           "audio",
           "availableScreenResolution",
           "canvas",
@@ -35,6 +34,7 @@
           "indexedDb",
           "installedFonts",
           "language",
+          "localIp",
           "localStorage",
           "pixelRatio",
           "platform",
@@ -48,16 +48,8 @@
           "webGl"
         ];
 
-        let result;
-        if (typeof imprint.test === "function") {
-          result = await imprint.test(tests);
-        } else if (typeof imprint.getFingerprint === "function") {
-          result = await imprint.getFingerprint(tests);
-        } else {
-          throw new Error("No supported ImprintJS method found");
-        }
-
-        setResult(pickBestId(result), "Done");
+        const result = await window.imprint.test(browserTests);
+        setResult(String(result), "Done");
       } catch (err) {
         setError(err);
       }
