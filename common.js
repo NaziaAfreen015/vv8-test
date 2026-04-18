@@ -1,48 +1,45 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 24px;
-  max-width: 900px;
-  margin: 0 auto;
-  line-height: 1.4;
+function setResult(value, status = "Done") {
+  document.getElementById("result").textContent = value;
+  document.getElementById("status").textContent = status;
 }
 
-h1 {
-  margin-bottom: 8px;
+function setError(err) {
+  const msg = err instanceof Error ? err.message : String(err);
+  setResult(`ERROR: ${msg}`, "Failed");
 }
 
-.subtitle {
-  color: #666;
-  margin-bottom: 20px;
+function safeStringify(obj) {
+  try {
+    return JSON.stringify(obj, null, 2);
+  } catch {
+    return String(obj);
+  }
 }
 
-.card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 16px;
-  background: #fafafa;
+function pickBestId(obj) {
+  if (obj == null) return "No result";
+
+  const candidates = [
+    obj.visitorId,
+    obj.deviceId,
+    obj.clusterUUID,
+    obj.hash,
+    obj.fingerprint,
+    obj.id,
+    obj.thumbmark,
+    obj.botScore,
+  ].filter(Boolean);
+
+  return candidates.length ? String(candidates[0]) : safeStringify(obj);
 }
 
-.result-box {
-  background: #f4f4f4;
-  border-radius: 8px;
-  padding: 12px;
-  min-height: 80px;
-  white-space: pre-wrap;
-  word-break: break-word;
-  font-family: monospace;
-  font-size: 13px;
-}
-
-.status {
-  margin-top: 10px;
-  font-size: 12px;
-  color: #666;
-}
-
-nav ul {
-  padding-left: 20px;
-}
-
-nav li {
-  margin: 8px 0;
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = src;
+    s.async = true;
+    s.onload = resolve;
+    s.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+    document.head.appendChild(s);
+  });
 }
