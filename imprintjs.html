@@ -18,11 +18,11 @@
   <script>
     async function run() {
       try {
-        if (!window.ImprintJs) {
+        if (!window.imprint) {
           throw new Error("ImprintJs global not found");
         }
 
-        const imprint = new window.ImprintJs();
+        const imprint = new window.imprint();
         const tests = [
           "audio",
           "availableScreenResolution",
