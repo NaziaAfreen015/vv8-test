@@ -30,7 +30,7 @@
                 setResult(result.visitorId, "Done");
 
                 try {
-                    localStorage.setItem("fingerprintjs_visitorId", result.visitorId);
+                    window.localStorage.setItem("fingerprintjs_visitorId", result.visitorId);
                 } catch (e) {
                     console.error("localStorage write failed:", e);
                 }
