@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FingerprintJS</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <script src="./vendor/fingerprintjs.js"></script>
-</head>
-<body>
-  <h1>Fingerprint given by FingerprintJS</h1>
-  <div class="card">
-    <div class="result-box" id="result">Loading...</div>
-    <div class="status" id="status">Initializing...</div>
-  </div>
 
-  <script src="./common.js"></script>
-  <script>
-    async function run() {
-      try {
-        if (!window.FingerprintJS) {
-          throw new Error("FingerprintJS global not found");
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FingerprintJS</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./vendor/fingerprintjs.js"></script>
+</head>
+
+<body>
+    <h1>Fingerprint given by FingerprintJS</h1>
+    <div class="card">
+        <div class="result-box" id="result">Loading...</div>
+        <div class="status" id="status">Initializing...</div>
+    </div>
+
+    <script src="./common.js"></script>
+    <script>
+        async function run() {
+            try {
+                if (!window.FingerprintJS) {
+                    throw new Error("FingerprintJS global not found");
+                }
+
+                const fp = await window.FingerprintJS.load();
+                const result = await fp.get();
+
+                setResult(result.visitorId, "Done");
+
+                try {
+                    localStorage.setItem("fingerprintjs_visitorId", result.visitorId);
+                } catch (e) {
+                    console.error("localStorage write failed:", e);
+                }
+            } catch (err) {
+                setError(err);
+            }
         }
 
-        const fp = await window.FingerprintJS.load();
-        const result = await fp.get();
-
-        setResult(result.visitorId, "Done");
-      } catch (err) {
-        setError(err);
-      }
-    }
-
-    run();
-  </script>
+        run();
+    </script>
 </body>
+
 </html>
