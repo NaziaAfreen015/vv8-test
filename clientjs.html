@@ -24,6 +24,11 @@
 
         const client = new window.ClientJS();
         const result = client.getFingerprint();
+        const {userAgent, platform, language, timezone} = navigator;
+        console.log("User Agent:", userAgent);
+        console.log("Platform:", platform);
+        console.log("Language:", language);
+        console.log("Timezone:", timezone);
         setResult(String(result), "Done");
       } catch (err) {
         setError(err);
