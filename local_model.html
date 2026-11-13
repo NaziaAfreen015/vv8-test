@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>On-device AI Fingerprint</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 24px; max-width: 1100px; margin: 0 auto; line-height: 1.4; }
+    section { margin-top: 24px; }
+    h2 { font-size: 18px; margin: 0 0 8px 0; }
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+    .controls input { padding: 6px 8px; min-width: 240px; }
+    button { padding: 6px 12px; cursor: pointer; }
+    .table-wrap { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    th, td { border: 1px solid #ddd; padding: 4px 8px; text-align: left; vertical-align: top; }
+    th { background: #f0f0f0; }
+    td { word-break: break-word; }
+    .badge { display: inline-block; padding: 1px 6px; border-radius: 4px; font-family: monospace; font-size: 12px; }
+    .badge.ok { background: #d8f3dc; color: #1b4332; }
+    .badge.warn { background: #fff3bf; color: #5c4400; }
+    .badge.bad { background: #ffe3e3; color: #7a1d1d; }
+    pre { background: #f4f4f4; border-radius: 8px; padding: 12px; overflow-x: auto; font-size: 12px; }
+    details { margin-top: 16px; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <h1>Fingerprint from On-device AI APIs</h1>
+  <div class="subtitle">
+    Probes Chrome's built-in AI (Prompt API, Summarizer, Writer, Rewriter, Proofreader,
+    Translator, Language Detector). Passive probes need no permission. Active probes run
+    only if the model is already on this device.
+  </div>
+
+  <div class="card">
+    <div class="result-box" id="result">Loading...</div>
+    <div class="status" id="status">Initializing...</div>
+    <div class="controls">
+      <input id="device-label" placeholder="Device label, e.g. MacBook M2 16GB / Chrome 148" />
+      <button id="btn-active">Re-run (passive + active)</button>
+      <button id="btn-download" hidden>Download on-device model (several GB)</button>
+      <button id="btn-copy">Copy JSON</button>
+      <button id="btn-save">Download JSON</button>
+    </div>
+  </div>
+
+  <section>
+    <h2>API presence and API surface</h2>
+    <div id="presence"></div>
+  </section>
+
+  <section>
+    <h2>availability() over the option grid</h2>
+    <div class="label">No permission prompt or user gesture is needed for any of these calls.</div>
+    <div id="availability"></div>
+  </section>
+
+  <section>
+    <h2>availability() call timing (ms)</h2>
+    <div id="timing"></div>
+  </section>
+
+  <section>
+    <h2>Active probes</h2>
+    <div id="active"></div>
+  </section>
+
+  <details>
+    <summary>Baseline context (not part of the hashes)</summary>
+    <pre id="context"></pre>
+  </details>
+
+  <details>
+    <summary>Raw report JSON</summary>
+    <pre id="raw"></pre>
+  </details>
+
+  <script src="./common.js"></script>
+  <script src="./local_model.js"></script>
+</body>
+</html>
