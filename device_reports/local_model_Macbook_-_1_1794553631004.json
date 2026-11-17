@@ -1,0 +1,741 @@
+{
+  "meta": {
+    "poc": "on-device-ai-fingerprint",
+    "version": 1,
+    "url": "https://naziaafreen015.github.io/vv8-test/local_model.html",
+    "collectedAt": "2026-11-13T07:05:46.976Z",
+    "deviceLabel": "Macbook - 1"
+  },
+  "context": {
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "platform": "MacIntel",
+    "language": "en-US",
+    "languages": [
+      "en-US",
+      "en"
+    ],
+    "hardwareConcurrency": 10,
+    "deviceMemory": 16,
+    "timezone": "America/New_York",
+    "isSecureContext": true,
+    "crossOriginIsolated": false,
+    "uaCH": {
+      "architecture": "arm",
+      "bitness": "64",
+      "brands": [
+        {
+          "brand": "Not:A-Brand",
+          "version": "8"
+        },
+        {
+          "brand": "Chromium",
+          "version": "156"
+        },
+        {
+          "brand": "Google Chrome",
+          "version": "156"
+        }
+      ],
+      "fullVersionList": [
+        {
+          "brand": "Not:A-Brand",
+          "version": "8.0.0.0"
+        },
+        {
+          "brand": "Chromium",
+          "version": "156.0.8078.49"
+        },
+        {
+          "brand": "Google Chrome",
+          "version": "156.0.8078.49"
+        }
+      ],
+      "mobile": false,
+      "model": "",
+      "platform": "macOS",
+      "platformVersion": "26.6.0"
+    },
+    "storageQuotaGB": 10.7,
+    "webgpu": {
+      "vendor": "apple",
+      "architecture": "metal-3",
+      "device": "",
+      "description": ""
+    }
+  },
+  "presence": {
+    "LanguageModel": true,
+    "Summarizer": true,
+    "Translator": true,
+    "LanguageDetector": true,
+    "legacy:window.ai": false,
+    "legacy:window.translation": false
+  },
+  "surface": {
+    "LanguageModel": {
+      "statics": [
+        "availability",
+        "create"
+      ],
+      "prototype": [
+        "append",
+        "clone",
+        "contextUsage",
+        "contextWindow",
+        "destroy",
+        "measureContextUsage",
+        "oncontextoverflow",
+        "prompt",
+        "promptStreaming"
+      ]
+    },
+    "Summarizer": {
+      "statics": [
+        "availability",
+        "create"
+      ],
+      "prototype": [
+        "destroy",
+        "expectedContextLanguages",
+        "expectedInputLanguages",
+        "format",
+        "inputQuota",
+        "measureInputUsage",
+        "outputLanguage",
+        "sharedContext",
+        "summarize",
+        "summarizeStreaming",
+        "type"
+      ]
+    },
+    "Translator": {
+      "statics": [
+        "availability",
+        "create"
+      ],
+      "prototype": [
+        "destroy",
+        "inputQuota",
+        "measureInputUsage",
+        "sourceLanguage",
+        "targetLanguage",
+        "translate",
+        "translateStreaming"
+      ]
+    },
+    "LanguageDetector": {
+      "statics": [
+        "availability",
+        "create"
+      ],
+      "prototype": [
+        "destroy",
+        "detect",
+        "expectedInputLanguages",
+        "inputQuota",
+        "measureInputUsage"
+      ]
+    }
+  },
+  "availability": [
+    {
+      "api": "LanguageModel",
+      "variant": "default",
+      "result": "available",
+      "ms": 0.5
+    },
+    {
+      "api": "LanguageModel",
+      "variant": "text:en",
+      "result": "available",
+      "ms": 0.2
+    },
+    {
+      "api": "LanguageModel",
+      "variant": "text:es",
+      "result": "available",
+      "ms": 0.1
+    },
+    {
+      "api": "LanguageModel",
+      "variant": "text:ja",
+      "result": "available",
+      "ms": 0.1
+    },
+    {
+      "api": "LanguageModel",
+      "variant": "text:de",
+      "result": "available",
+      "ms": 1.1
+    },
+    {
+      "api": "LanguageModel",
+      "variant": "text:fr",
+      "result": "available",
+      "ms": 0.7
+    },
+    {
+      "api": "LanguageModel",
+      "variant": "text:bn",
+      "result": "unavailable",
+      "ms": 0.3
+    },
+    {
+      "api": "LanguageModel",
+      "variant": "input:image",
+      "result": "available",
+      "ms": 0.3
+    },
+    {
+      "api": "LanguageModel",
+      "variant": "input:audio",
+      "result": "available",
+      "ms": 0.2
+    },
+    {
+      "api": "Summarizer",
+      "variant": "default",
+      "result": "available",
+      "ms": 0.5
+    },
+    {
+      "api": "Summarizer",
+      "variant": "type:tldr",
+      "result": "available",
+      "ms": 0.1
+    },
+    {
+      "api": "Summarizer",
+      "variant": "type:key-points",
+      "result": "available",
+      "ms": 0.1
+    },
+    {
+      "api": "Summarizer",
+      "variant": "type:teaser",
+      "result": "available",
+      "ms": 0
+    },
+    {
+      "api": "Summarizer",
+      "variant": "type:headline",
+      "result": "available",
+      "ms": 0.1
+    },
+    {
+      "api": "Summarizer",
+      "variant": "length:short",
+      "result": "available",
+      "ms": 0
+    },
+    {
+      "api": "Summarizer",
+      "variant": "length:medium",
+      "result": "available",
+      "ms": 0.2
+    },
+    {
+      "api": "Summarizer",
+      "variant": "length:long",
+      "result": "available",
+      "ms": 0
+    },
+    {
+      "api": "Summarizer",
+      "variant": "lang:en",
+      "result": "available",
+      "ms": 0
+    },
+    {
+      "api": "Summarizer",
+      "variant": "lang:es",
+      "result": "available",
+      "ms": 0.1
+    },
+    {
+      "api": "Summarizer",
+      "variant": "lang:ja",
+      "result": "available",
+      "ms": 0.1
+    },
+    {
+      "api": "Writer",
+      "variant": "default",
+      "result": "absent",
+      "ms": null
+    },
+    {
+      "api": "Rewriter",
+      "variant": "default",
+      "result": "absent",
+      "ms": null
+    },
+    {
+      "api": "Proofreader",
+      "variant": "default",
+      "result": "absent",
+      "ms": null
+    },
+    {
+      "api": "LanguageDetector",
+      "variant": "default",
+      "result": "available",
+      "ms": 0.2
+    },
+    {
+      "api": "LanguageDetector",
+      "variant": "expect:en",
+      "result": "available",
+      "ms": 0
+    },
+    {
+      "api": "LanguageDetector",
+      "variant": "expect:bn",
+      "result": "available",
+      "ms": 0.1
+    },
+    {
+      "api": "LanguageDetector",
+      "variant": "expect:ja",
+      "result": "available",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→es",
+      "result": "downloadable",
+      "ms": 0.2
+    },
+    {
+      "api": "Translator",
+      "variant": "es→en",
+      "result": "downloadable",
+      "ms": 0.2
+    },
+    {
+      "api": "Translator",
+      "variant": "en→fr",
+      "result": "downloadable",
+      "ms": 0
+    },
+    {
+      "api": "Translator",
+      "variant": "fr→en",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→de",
+      "result": "downloadable",
+      "ms": 0
+    },
+    {
+      "api": "Translator",
+      "variant": "de→en",
+      "result": "downloadable",
+      "ms": 0.2
+    },
+    {
+      "api": "Translator",
+      "variant": "en→it",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "it→en",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→pt",
+      "result": "downloadable",
+      "ms": 0
+    },
+    {
+      "api": "Translator",
+      "variant": "pt→en",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→nl",
+      "result": "downloadable",
+      "ms": 0
+    },
+    {
+      "api": "Translator",
+      "variant": "nl→en",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→pl",
+      "result": "downloadable",
+      "ms": 0.2
+    },
+    {
+      "api": "Translator",
+      "variant": "pl→en",
+      "result": "downloadable",
+      "ms": 0
+    },
+    {
+      "api": "Translator",
+      "variant": "en→ru",
+      "result": "downloadable",
+      "ms": 0
+    },
+    {
+      "api": "Translator",
+      "variant": "ru→en",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→tr",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "tr→en",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→ar",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "ar→en",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→hi",
+      "result": "downloadable",
+      "ms": 0
+    },
+    {
+      "api": "Translator",
+      "variant": "hi→en",
+      "result": "downloadable",
+      "ms": 0.2
+    },
+    {
+      "api": "Translator",
+      "variant": "en→bn",
+      "result": "downloadable",
+      "ms": 0
+    },
+    {
+      "api": "Translator",
+      "variant": "bn→en",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→ja",
+      "result": "downloadable",
+      "ms": 0
+    },
+    {
+      "api": "Translator",
+      "variant": "ja→en",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→ko",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "ko→en",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→zh",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "zh→en",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→zh-Hant",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "zh-Hant→en",
+      "result": "downloadable",
+      "ms": 0.1
+    },
+    {
+      "api": "Translator",
+      "variant": "en→vi",
+      "result": "downloadable",
+      "ms": 0
+    },
+    {
+      "api": "Translator",
+      "variant": "vi→en",
+      "result": "downloadable",
+      "ms": 0.1
+    }
+  ],
+  "availabilityTiming": {
+    "firstCall": {
+      "api": "LanguageModel",
+      "ms": 0.5
+    },
+    "LanguageModel": {
+      "n": 5,
+      "min": 0,
+      "median": 0.1,
+      "mean": 0.08,
+      "max": 0.2,
+      "sd": 0.07,
+      "raw": [
+        0,
+        0,
+        0.1,
+        0.1,
+        0.2
+      ]
+    },
+    "LanguageDetector": {
+      "n": 5,
+      "min": 0,
+      "median": 0,
+      "mean": 0.92,
+      "max": 4.5,
+      "sd": 1.79,
+      "raw": [
+        0,
+        0,
+        0,
+        0.1,
+        4.5
+      ]
+    },
+    "Summarizer": {
+      "n": 5,
+      "min": 0,
+      "median": 0.1,
+      "mean": 0.66,
+      "max": 3.1,
+      "sd": 1.22,
+      "raw": [
+        0,
+        0,
+        0.1,
+        0.1,
+        3.1
+      ]
+    }
+  },
+  "params": "not exposed",
+  "active": {
+    "languageModel": {
+      "samplingParams": "accepted",
+      "createMs": 4615,
+      "session": {
+        "contextWindow": 9216,
+        "contextUsage": 0
+      },
+      "measureMethod": "measureContextUsage",
+      "tokenCounts": {
+        "ascii": 15,
+        "unicode": 17,
+        "code": 23,
+        "numbers": 39
+      },
+      "shortRuns": [
+        {
+          "ok": true,
+          "ttftMs": 1445.3,
+          "totalMs": 1445.4,
+          "chunks": 1,
+          "chars": 4,
+          "text": "blue",
+          "sha256": "16477688c0e00699",
+          "outputTokens": 6,
+          "decodeTokensPerSec": 50000
+        },
+        {
+          "ok": true,
+          "ttftMs": 80.9,
+          "totalMs": 81,
+          "chunks": 1,
+          "chars": 4,
+          "text": "blue",
+          "sha256": "16477688c0e00699",
+          "outputTokens": 6,
+          "decodeTokensPerSec": 50000
+        },
+        {
+          "ok": true,
+          "ttftMs": 79.6,
+          "totalMs": 79.6,
+          "chunks": 1,
+          "chars": 4,
+          "text": "blue",
+          "sha256": "16477688c0e00699",
+          "outputTokens": 6
+        }
+      ],
+      "shortDeterministic": true,
+      "longRun": {
+        "ok": true,
+        "ttftMs": 140.4,
+        "totalMs": 2954.7,
+        "chunks": 111,
+        "chars": 111,
+        "text": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40\n",
+        "sha256": "cb8b89aca3166da5",
+        "outputTokens": 116,
+        "decodeTokensPerSec": 40.9
+      }
+    },
+    "languageDetector": {
+      "createMs": 3,
+      "results": [
+        {
+          "text": "Hello, how are you doing today?",
+          "ms": 0.1,
+          "top": [
+            {
+              "lang": "en",
+              "confidence": 0.9991140961647034
+            },
+            {
+              "lang": "und",
+              "confidence": 0.00000799622375780018
+            }
+          ]
+        },
+        {
+          "text": "Bonjour tout le monde",
+          "ms": 0.1,
+          "top": [
+            {
+              "lang": "fr",
+              "confidence": 0.9997745156288147
+            },
+            {
+              "lang": "und",
+              "confidence": 6.008267519064248e-7
+            }
+          ]
+        },
+        {
+          "text": "Ich bin ein Berliner",
+          "ms": 0.1,
+          "top": [
+            {
+              "lang": "de",
+              "confidence": 0.9989196062088013
+            },
+            {
+              "lang": "und",
+              "confidence": 3.5411662935302957e-8
+            }
+          ]
+        },
+        {
+          "text": "আমি বাংলায় গান গাই",
+          "ms": 0,
+          "top": [
+            {
+              "lang": "bn",
+              "confidence": 0.9999606609344482
+            },
+            {
+              "lang": "und",
+              "confidence": 6.883080061470537e-8
+            }
+          ]
+        },
+        {
+          "text": "ok",
+          "ms": 0.1,
+          "top": [
+            {
+              "lang": "en",
+              "confidence": 0.37938231229782104
+            },
+            {
+              "lang": "ar-Latn",
+              "confidence": 0.22666789591312408
+            },
+            {
+              "lang": "hi-Latn",
+              "confidence": 0.04522107541561127
+            }
+          ]
+        },
+        {
+          "text": "si",
+          "ms": 0,
+          "top": [
+            {
+              "lang": "ar-Latn",
+              "confidence": 0.2659547030925751
+            },
+            {
+              "lang": "en",
+              "confidence": 0.19849297404289246
+            },
+            {
+              "lang": "hi-Latn",
+              "confidence": 0.09782835096120834
+            }
+          ]
+        }
+      ]
+    },
+    "summarizer": {
+      "createMs": 2.6,
+      "inputQuota": 9216,
+      "runs": [
+        {
+          "ms": 2527.1,
+          "text": "Browser fingerprinting identifies users by combining seemingly harmless device and software attributes like screen size and installed fonts, making it difficult for users to avoid tracking since the data is not stored on the device.",
+          "sha256": "0f27fb7340166fdd"
+        },
+        {
+          "ms": 899.7,
+          "text": "Browser fingerprinting uniquely identifies users by combining numerous minor device and software characteristics like screen size and installed fonts, making it difficult for users to prevent tracking.",
+          "sha256": "49fae337194a5588"
+        }
+      ]
+    },
+    "translator": "no available en→X pair"
+  },
+  "hashes": {
+    "passive": "49357c68eb843f1f700958cd80024a66",
+    "full": "0a20b5830815af9c9061813bec6d0c21"
+  }
+}
