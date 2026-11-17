@@ -52,8 +52,10 @@
 
   const SHORT_PROMPT =
     "Answer with a single lowercase word and no punctuation: what colour is a clear daytime sky?";
+  // const LONG_PROMPT =
+  //   "List the numbers from 1 to 40 separated by single spaces. Output nothing else.";
   const LONG_PROMPT =
-    "List the numbers from 1 to 40 separated by single spaces. Output nothing else.";
+    "What is the screen dimension of this device?";
   const SUMMARY_TEXT =
     "Browser fingerprinting identifies users by combining many small, individually " +
     "harmless attributes of their device and software, such as screen size, installed " +
